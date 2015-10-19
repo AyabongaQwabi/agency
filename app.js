@@ -2,6 +2,7 @@ var express = require('express'),
 	app = express();
 	exphbs = require('express-handlebars'),
 	mysql = require('mysql'),
+	bcrypt = require('bcrypt'),
 	bodyParser = require("body-parser"),
 	//myConnection = require("express-myconnection");
 
