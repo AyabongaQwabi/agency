@@ -5,12 +5,12 @@ drop table if exists Freelancer;
 
 
 create table  Freelancer (id int not null primary key auto_increment,
-							name varchar(35),
+							Name varchar(35),
 							ID_no int
 							);
 
 create table  Company (id int not null primary key auto_increment,
-							name varchar(35),
+							Name varchar(35),
 							Reg_no int
 							);
 
@@ -21,12 +21,12 @@ create table  Consultant (id int not null primary key auto_increment,
 							);
 
 create table  Contracts (id int not null primary key auto_increment,
-							Freelancer varchar(35),
-							Company varchar(35),
+							Freelancer_name varchar(35),
+							Company_placed varchar(35),
 							Start_date date,
 							End_date date,
 							Consultant varchar(35)
-							foreign key (Freelancer) references Freelancer(id),
-							foreign key (Company) references Company(id),
+							foreign key (Freelancer_name) references Freelancer(id),
+							foreign key (Company_placed) references Company(id),
 							foreign key (Consultant) references Consultant(id)
 							);
