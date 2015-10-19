@@ -4,6 +4,8 @@ var express = require('express'),
 	mysql = require('mysql'),
 	bcrypt = require('bcrypt'),
 	bodyParser = require("body-parser"),
+	applicants = require("./Routes/applicant"),
+	users = require("./Routes/users"),
 	//myConnection = require("express-myconnection");
 
 

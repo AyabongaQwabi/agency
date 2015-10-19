@@ -8,7 +8,7 @@ exports.showContracts = function (req, res, next) {
 				return next(err);
 			};
 			res.render('Contracts',{
-				Contracts:results;
+				Contracts:results
 			});
 		});
 	});
@@ -87,38 +87,3 @@ exports.deleteContracts = function (req, res, next) {
 		});			
 	});
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-exports.delete = function(req, res, next){
-	var id = req.params.id;
-	req.getConnection(function(err, connection){
-		connection.query('DELETE FROM products WHERE id = ?', [id], function(err,rows){
-			if(err){
-    			console.log("Error Selecting : %s ",err );
-			}
-			res.redirect('/products');
-		});
-	});
-};
-
-
