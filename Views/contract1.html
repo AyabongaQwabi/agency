@@ -1,0 +1,258 @@
+<html>
+	<head> 
+		<title> VGA </title>
+		
+		 <!-- Compiled and minified CSS -->
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		  <!-- Compiled and minified JavaScript -->
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		  <link rel='stylesheet' type='text/css' href='main.css'>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+          <script type="text/javascript">
+
+          	$(document).ready(function(){
+			    $('.collapsible').collapsible({
+			      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+			    });
+			  });
+			       
+          </script>
+	</head>
+    
+
+
+	<body>
+		
+	<div class='header'>
+		<img src='vgp-logo.png'>
+	</div>
+	<div class="container">
+
+	  	<div class="row search ">
+		   	<span class='searchIcon btn pink lighten-3 col s1'><i class="material-icons prefix">search</i></span>&nbsp
+		    <input id="searchbox" type="text" class="grey lighten-2 col s7">&nbsp		    
+		    <span class='addNew btn orange darken-3 col s2 center'> add new </span>
+	    </div>
+		  
+	    <table class='col s12 m12 newContract'>
+		        <thead>
+		          <tr>
+		              <th data-field="id">Freelancer</th>
+		              <th data-field="name">Company</th>
+		              <th data-field="name">Duration</th>
+		              <th data-field="name">Comnsultant</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		        	<tr class='orange lighten-2 center create'>
+		            <td>
+		            
+				          <input id="last_name" type="text" class="col s10 m8 white lighten-3">
+				         
+				 	            	
+		            </td>
+		            <td>
+		            	
+				          <input id="last_name" type="text" class="col s10 m8 white lighten-3">
+				          
+				  	            	
+		            </td>
+		            <td>
+		          
+				          <input id="last_name" type="text" class="col s10 m8 white lighten-3">
+				          
+				            	
+		            </td>
+		             <td>
+		      
+				          <input id="last_name" type="text" class="col s10 m8 white lighten-3">
+				         
+				            	
+		            </td>
+
+		           <td>  <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">done</i></a></td>
+		           <td><a class="close btn-floating btn-large waves-effect waves-light pink" onclick="Materialize.toast('Successfuly Added Siyanda Contract !', 4000)"><i class="material-icons">clear</i></a></td>
+		           
+		          </tr>
+		         
+		        </tbody>
+        </table>
+
+
+	    <div class='row center contracts'>
+
+			<div class="row">
+		    <div class="col s12">
+		      <ul class="tabs">
+		        <li class="tab col s3"><a href="#test1">Candidates</a></li>
+		        <li class="tab col s3"><a href="#test2">Contracts</a></li>		        
+		        <li class="tab col s3"><a href="#test4">Terminated</a></li>
+		      </ul>
+		    </div>
+		    <div id="test1" class="col s12">
+		    	<ul class="collapsible" data-collapsible="accordion">
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">perm_identity</i>
+			      		Alvin Chihudzai 
+			      		<span class='badge'>5 Months Contract </span>
+			      </div>
+			      <div class="collapsible-body">
+			      	<p class='title'>Started 11 October 2014 </p>
+			      	<p class='title'>Ending 23 November 2016 </p>
+			      	<p class='title'>Consulted by Zuko Rhulashe </p>
+
+
+			      </div>
+			    </li>
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">perm_identity</i>Sakhile Mazwi</div>
+			      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			    </li>
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">perm_identity</i>Odwa Ngubono</div>
+			      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			    </li>
+			  </ul>
+		    </div>
+
+
+
+
+		    <div id="test2" class="col s12">
+		    	<table class='col s12 m12 table'>
+
+			        <thead>
+			          <tr>
+			              <th data-field="id">Freelancer</th>
+			              <th data-field="name">Company</th>
+			              <th data-field="name">Duration</th>
+			              <th data-field="name">Comnsultant</th>
+			          </tr>
+			        </thead>
+
+			        <tbody>			          
+			          <tr class='pink lighten-3'>
+			            <td class="col s5 m3">Alvin</td>
+			            <td class="col s5 m3" >PicknPay</td>
+			            <td class="col s5 m3"> 6 Months </td>
+			            <td class="col s5 m3"> Sive Gambuza</td>
+			            <td class='col s5 m6'>
+			            	<div class="button-container"> 
+			            		<a href="#" id='update' class="btn orange"> update </i> </a>
+			            	</div>								
+			            </td>
+			            <td class='col s5 m6'><span class='btn orange '>Delete</span></td>
+			          </tr>
+			          <tr class='entry pink lighten-3'>
+			            <td class="col s5 m3">Mandla</td>
+			            <td class="col s5 m3" >Edgars</td>
+			            <td class="col s5 m3"> 23 Months </td>
+			            <td class="col s5 m3"> Elvis Masiza</td>
+			            <td class='col s5 m6'>
+			            	<div class="button-container"> 
+			            		<a href="#" id='update' class="btn orange"> update </i> </a>
+			            	</div>								
+			            </td>
+			            <td class='col s5 m6'><span class='btn orange '>Delete</span></td>
+			          </tr>
+			          <tr class='entry pink lighten-3'>
+			            <td class="col s5 m3">Luvo</td>
+			            <td class="col s5 m3" >Shoprite Checkers</td>
+			            <td class="col s5 m3"> 8 Months </td>
+			            <td class="col s5 m3"> Sive Gambuza</td>
+			            <td class='col s5 m6'>
+			            	<div class="button-container"> 
+			            		<a href="#" id='update' class="btn orange"> update </i> </a>
+			            	</div>								
+			            </td>
+			            <td class='col s5 m6'><span class='btn orange '>Delete</span></td>
+			          </tr>
+			          <tr class='entry pink lighten-3'>
+			            <td class="col s5 m3">Sinovuyo</td>
+			            <td class="col s5 m3" >PicknPay</td>
+			            <td class="col s5 m3"> 11 Months </td>
+			            <td class="col s5 m3"> Zuko Rhulashe</td>
+			            <td class='col s5 m6'>
+			            	<div class="button-container"> 
+			            		<a href="#" id='update' class="btn orange"> update </i> </a>
+			            	</div>								
+			            </td>
+			            <td class='col s5 m6'><span class='btn orange '>Delete</span></td>
+			          </tr>
+			        </tbody>
+      		    </table>
+      		</div>	
+
+
+
+
+		    <div id='pop' class="modal"> 
+				<a href="#" class="close"> <i class="mdi-navigation-close"></i> </a>
+				<div class="modal-content pink">
+					<form class="col s12">
+						<div class="row">
+							<div class="input-field col s6">
+								<i class="material-icons prefix">account_circle</i>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">First Name</label>
+							</div>
+							<div class="input-field col s6">
+								<i class="material-icons prefix">phone</i>
+								<input id="icon_telephone" type="tel" class="validate">
+								<label for="icon_telephone">Telephone</label>
+							</div>
+					     </div>
+					</form>
+				</div>        
+			</div>
+
+
+		    <div id="test4" class="col s12">
+		    </div>
+
+
+
+
+		  </div>
+
+
+
+			
+
+      		
+
+
+
+
+
+          </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> 
+	<script>
+
+		$('#update').click(function () {
+		
+		        var ele = $(this);
+		        $('#pop').addClass('open');
+		        $('#pop').addClass('slide');
+		        setTimeout(function () {
+		            $('#pop').fadeIn();
+		            setTimeout(function () {
+		                $('#pop').removeClass('open');
+		                ele.removeClass('slide');
+		            }, 100);
+		        }, 100);
+		
+		    $('.close').click(function () {	        
+		        $('#pop').fadeOut();
+		    });
+		});
+	</script>
+    <script type="text/javascript" src='main.js'></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+     </body>
+    </html>
