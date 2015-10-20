@@ -4,51 +4,44 @@ var express = require('express'),
 	mysql = require('mysql'),
 	bcrypt = require('bcrypt'),
 	bodyParser = require("body-parser"),
-	applicants = require("./Routes/applicant"),
+	Contracts = require("./Routes/Contracts"),
 	users = require("./Routes/users"),
-	//myConnection = require("express-myconnection");
+	myConnection = require("express-myconnection");
+
+
+ 
+	 dbOptions = {
+     host : "localhost",
+     user : "root",
+     password : "ayabonga",
+     port : 3306,
+     database : "agency"
+ };
+ 
+app.engine("handlebars", exphbs({defaultLayout : "main"}));
+app.set("view engine", "handlebars"); 
+app.use(express.static(__dirname + "/public")); 
+
+app.use(myConnection(mysql, dbOptions, "single")); 
 
 
 
-
-	 
-
-/*
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'secret',
-  database : 'my_db'
+app.get('/home', function (req, res){
+  res.render('home');
 });
 
-connection.connect();
+ 
+app.get('/Contracts',Contracts.showContracts);
+app.post('/Contracts/update/:id',Contracts.updateContracts);
+app.post('/Contracts/add',Contracts.addContracts);
+app.get('/edit_Contracts/:id', Contracts.showContracts);
+app.get('/Contracts/delete/:id',Contracts.deleteContracts);
 
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-
-  console.log('The solution is: ', rows[0].solution);
-});
-
-connection.end();
-
-*/
-
-//setup template handlebars as the template engine
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
-app.use(express.static(__dirname + '/public'));
-
-//setup middleware
-//app.use(myConnection(mysql, dbOptions, 'single'));
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-// parse application/json
-app.use(bodyParser.json())
-
-
-
-app.listen(3000, function () {
-    console.log('express-handlebars example server listening on: 3000');
+ 
+var port = process.env.PORT || 8080;       
+   
+var server = app.listen(port, function() {
+   var host = server.address().address;
+   var port = server.address().port;
+      console.log('Example app listening at http://%s:%s', host, port);
 });
