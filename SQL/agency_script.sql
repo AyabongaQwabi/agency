@@ -21,12 +21,13 @@ create table  Consultant (id int not null primary key auto_increment,
 							);
 
 create table  Contracts (id int not null primary key auto_increment,
-							Freelancer_name varchar(35),
-							Company_placed varchar(35),
+							Freelancer_name int(35),
+							Company_placed int(35),
 							Start_date date,
 							End_date date,
-							Consultant varchar(35)
+							Consultant int(35),
 							foreign key (Freelancer_name) references Freelancer(id),
 							foreign key (Company_placed) references Company(id),
 							foreign key (Consultant) references Consultant(id)
 							);
+

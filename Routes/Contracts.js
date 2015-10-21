@@ -2,14 +2,19 @@ exports.showContracts = function (req, res, next) {
 	req.getConnection(function (err, connection) {
 		if (err)
 			return next (err);
-		var query = "SELECT * FROM Contracts";
+		var query = "SELECT Freelancer.name as Freelancer ,Company.name as Company ,Consultant.Name as Consultant ,Date_FORMAT(Contracts.start_date,'%d %b %y') as start_date ,Date_FORMAT(Contracts.end_date,'%d %b %y') as end_date FROM  Consultant,Contracts , Freelancer ,Company where Contracts.Freelancer_name = Freelancer.id and Contracts.Company_placed = Company.id and Contracts.Consultant =Consultant.id";
 		connection.query(query, [], function (err, results) {
 			if (err){
 				return next(err);
 			};
-			res.render('Contracts',{
-				Contracts:results
-			});
+			connection.query('select * from Freelancer',function(err,candidates){
+
+				res.render('contract',{
+					Contracts:results,
+					candidates:candidates
+				});
+			})
+			
 		});
 	});
 };

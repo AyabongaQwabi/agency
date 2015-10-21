@@ -13,7 +13,7 @@ var express = require('express'),
 	 dbOptions = {
      host : "localhost",
      user : "root",
-     password : "ayabonga",
+     password : "theaya5379",
      port : 3306,
      database : "agency"
  };
